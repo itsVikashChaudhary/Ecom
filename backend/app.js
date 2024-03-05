@@ -41,16 +41,27 @@ app.get("/",(req,res)=>{
 })
 
 //Image Store Engine
+// const storage = multer.diskStorage({
+//     destination:'./tmp/images',
+//     filename:(req,file,cb)=>{
+//         return cb(null,`${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
+//     }
+// })
+
+// const upload = multer({storage:storage})
+
 const storage = multer.diskStorage({
-    destination:'./tmp/images',
-    filename:(req,file,cb)=>{
-        return cb(null,`${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
-    }
-})
-
-const upload = multer({storage:storage})
-
-
+    destination: '/tmp', // Use the /tmp directory
+    filename: (req, file, cb) => {
+      const uniqueFilename = `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`;
+      cb(null, uniqueFilename);
+    },
+  });
+  
+  const upload = multer({ storage: storage });
+  
+  // Rest of your code remains the same...
+  
 
 
 //Creating upload Endpoint for images
