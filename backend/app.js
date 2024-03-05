@@ -49,15 +49,15 @@ app.get("/",(req,res)=>{
 // })
 
 const storage = multer.diskStorage({
-    destination: '/tmp', // Use the /tmp directory
-    filename: (req, file, cb) => {
-      const uniqueFilename = `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`;
-      cb(null, uniqueFilename);
-    },
-  });
-  
-  // Rest of your code remains the same...
-  
+  destination: '/tmp', // Use the /tmp directory
+  filename: (req, file, cb) => {
+    const uniqueFilename = `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`;
+    cb(null, uniqueFilename);
+  },
+});
+
+// Rest of your code remains the same...
+
 
 const upload = multer({storage:storage})
 
