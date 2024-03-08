@@ -41,14 +41,14 @@ app.get("/",(req,res)=>{
 })
 
 //Image Store Engine
-const storage = multer.diskStorage({
-    destination:'./tmp/images',
-    filename:(req,file,cb)=>{
-        return cb(null,`${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
-    }
-})
+// const storage = multer.diskStorage({
+//     destination:'./tmp/images',
+//     filename:(req,file,cb)=>{
+//         return cb(null,`${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
+//     }
+// })
 
-const upload = multer({storage:storage})
+// const upload = multer({storage:storage})
 
 // const storage = multer.diskStorage({
 //     destination:'./tmp/images', // Use the /tmp directory
@@ -65,14 +65,14 @@ const upload = multer({storage:storage})
 
 
 //Creating upload Endpoint for images
-app.use('/images',express.static("tmp/images"))
-app.post("/upload",upload.single('product'),(req,res)=>{
-    res.json({
-        success: 1,
-        image_url: `${window.location.origin}${port}/images/${req.file.filename}` 
-    });
+// app.use('/images',express.static("tmp/images"))
+// app.post("/upload",upload.single('product'),(req,res)=>{
+//     res.json({
+//         success: 1,
+//         image_url: `${window.location.origin}${port}/images/${req.file.filename}` 
+//     });
     
-})
+// })
 
 
 
