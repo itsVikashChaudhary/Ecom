@@ -3,9 +3,10 @@ import './CSS/ShopCatagory.css'
 import{ShopContext} from '../context/ShopContext'
 import dropdown_icon from '../components/assets/dropdown_icon.png'
 import Item from '../components/items/Item'
+// import data_product from '../components/assets/data'
 
 const ShopCatagory = (props) => {
-  const{all_product} = useContext(ShopContext)
+ const{all_product} = useContext(ShopContext)
   return (
     <div className="shop-catagory">
      <img className='shopcategory-banner' src={props.banner} alt="" />

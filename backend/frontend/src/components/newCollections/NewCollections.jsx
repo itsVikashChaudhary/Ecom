@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import './NewCollections.css'
-//import new_collectin from '../assets/new_collections'
+import new_collectin from '../assets/new_collections'
 import Item from '../items/Item'
 
 
 const NewCollections = () => {
 
-  const [new_collectin,setNew_Collection] = useState([]);
-  useEffect(()=>{
-    fetch(`${window.location.origin}/newcollections`)
-    .then((respnse)=>respnse.json())
-    .then((data)=>setNew_Collection(data));
-  },[])
+  // const [new_collectin,setNew_Collection] = useState([]);
+  // useEffect(()=>{
+  //   fetch(`${window.location.origin}/newcollections`)
+  //   .then((respnse)=>respnse.json())
+  //   .then((data)=>setNew_Collection(data));
+  // },[])
 
   return (
     <div className="new_collections">
